@@ -1,0 +1,50 @@
+.#{$framework-class-prefix}-app-nav-tools {
+	display: inline;
+	text-align: right;
+
+	.#{$framework-class-prefix}-tooltip {
+		display: inline-block;
+
+		// keep tooltip body at the same position
+		@each $num, $m-left in (1: 2px, 2: -46px, 3: -93px, 4: -132px) {
+			&:nth-child(#{$num}) {
+				.#{$framework-class-prefix}-tooltip-content {
+					margin-left: $m-left + 5;
+				}
+
+				&.#{$framework-class-prefix}-open {
+					.#{$framework-class-prefix}-tooltip-content {
+						margin-left: $m-left;
+					}
+				}
+			}
+		}
+
+		img {
+			height: 27px;
+			width: 27px;
+		}
+	}
+
+	.#{$framework-class-prefix}-tooltip-content {
+		left: 0%;
+		right: 0;
+		width: 325px;
+
+		img {
+			height: 75px;
+			width: 75px;
+		}
+	}
+}
+
+.#{$framework-class-prefix}-app-nav-brand {
+
+	button {
+		&.#{$framework-class-prefix}-button {
+			font-size: $font-size * nth($spacing-list, 2);
+			position: absolute;
+			top: -15px;
+		}
+	}
+}

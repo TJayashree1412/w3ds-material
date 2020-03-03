@@ -1,0 +1,72 @@
+<div  class="ds-flex ds-flex-align-items-right ds-mar-l-auto">
+        <div class="ds-hide-xs ds-display-lg-flex">
+        <div class="ds-nav" role="navigation">
+            <div class="ds-nav-container ds-mar-r-1">
+              <ul class="ds-nav-list ds-nav-top-level">
+                  <li *ngIf="Roles.includes('VCMPLST')" class="ds-nav-item">
+                    <a [routerLink] = "'/compHome'"  id="compensation" class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3">Compensation</a>
+                    <ul class="ds-nav-list ds-nav-second-level ds-z-high">
+                      <li  *ngIf="Roles.includes('VCMPLST')" class="ds-nav-item " ><a class="ds-nav-link ds-active ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/myCompRequest'" >My Comp Request</a></li>
+                      <li *ngIf="Roles.includes('VALCMPHS')" class="ds-nav-item "><a class="ds-nav-link ds-active ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3"[routerLink] ="'/allCompHistory'">All Comp History</a></li>
+                      <li *ngIf="Roles.includes('VALREPTS')" class="ds-nav-item "><a class="ds-nav-link ds-active ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/assignmentStatus'">Assignment Status</a></li>
+                      <li *ngIf="Roles.includes('VALLEVRQ')" class="ds-nav-item "><a class="ds-nav-link ds-active ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/drLeaveRequest'">Leave Request</a></li>
+                    </ul>
+                  </li>
+                  <li class="ds-nav-item">
+                    <li *ngIf="Roles.includes('VCMPLST')" class="ds-nav-item">
+                        <a [routerLink] = "'/hqOps'"  id="HQops" class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-neutral-1">HQ Ops</a>
+                            <ul class="ds-nav-list ds-nav-second-level ds-z-high">
+                                <li *ngIf="Roles.includes('VCMPLST')" class="ds-nav-item " ><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/allCompRequest'" >All Comp Requets</a></li>
+                                <li *ngIf="Roles.includes('VCMPLST')" class="ds-nav-item "><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/onboardingList'">onboarding</a></li>
+                             </ul>
+                    </li>
+                  </ul>
+                  </div>
+                  </div>
+                  <!-- </div>
+                  </div>
+                  </div> -->
+                  
+
+
+
+
+<!-- <div class="ds-secondary-side-nav ds-no-gutter ds-no-border ds-mar-t-5 ds-mar-b-2 ds-pad-t-0_5 ds-pad-b-0_5" style="overflow:hidden !important;">
+      <div *ngIf="Roles.includes('VCMPLST')" class="ds-nav-item  ds-border-neutral-5" data-child="compSection" routerLinkActive="ds-active ds-bg-blue-6 ds-text-neutral-1" >
+        <a [routerLink] = "'/compHome'" routerLinkActive="ds-text-neutral-1">Compensation</a> 
+        <span class="subnav-icon ds-icon-chevron-up"></span>
+      </div>
+      <div *ngIf="Roles.includes('VCMPLST')" class="ds-nav-section ds-expanded" id="compSection">
+        <div class="ds-nav-sub-item ds-border-neutral-5" routerLinkActive="ds-active ds-bg-blue-6">
+           <a [routerLink] ="'/myCompRequest'" routerLinkActive="ds-text-neutral-1">My Comp Request</a> 
+         </div>
+         <div *ngIf="Roles.includes('VALCMPHS')" class="ds-nav-sub-item ds-border-neutral-5" routerLinkActive="ds-active ds-bg-blue-6">
+            <a [routerLink] ="'/allCompHistory'" routerLinkActive="ds-text-neutral-1">All Comp History</a> 
+          </div>
+       
+         <div *ngIf="Roles.includes('VALREPTS')" class="ds-nav-sub-item ds-border-neutral-5" routerLinkActive="ds-active ds-bg-blue-6">
+           <a [routerLink] ="'/assignmentStatus'" routerLinkActive="ds-text-neutral-1">Assignment Status</a> 
+         </div>
+     
+         <div *ngIf="Roles.includes('VALLEVRQ')" class="ds-nav-sub-item ds-border-neutral-5" routerLinkActive="ds-active ds-bg-blue-6">
+           <a [routerLink] ="'/drLeaveRequest'" routerLinkActive="ds-text-neutral-1">Leave Request</a> 
+         </div>
+    </div> 
+
+    <div *ngIf="Roles.includes('VHQops')" class="ds-nav-item  ds-border-neutral-5" data-child="hqOps" routerLinkActive="ds-active ds-bg-blue-6 ds-text-neutral-1" >
+        <a [routerLink] = "'/hqOps'" routerLinkActive="ds-text-neutral-1">Hq Ops</a> 
+        <span class="subnav-icon ds-icon-chevron-up"></span>
+      </div>
+      
+      <div *ngIf="Roles.includes('VCMTALL')" class="ds-nav-section ds-expanded" id="hqOps">
+        <div class="ds-nav-sub-item ds-border-neutral-5" routerLinkActive="ds-active ds-bg-blue-6">
+            <a [routerLink] ="'/allCompRequest'" routerLinkActive="ds-text-neutral-1">All Comp Request</a>    
+      </div>
+      <div *ngIf="Roles.includes('VOBLIST')" class="ds-nav-sub-item ds-border-neutral-5" routerLinkActive="ds-active ds-bg-blue-6">
+        <a [routerLink] ="'/onboardingList'" routerLinkActive="ds-text-neutral-1">Onboarding</a> 
+      </div>
+
+    <div *ngIf="Roles.includes('VHELP')" class="ds-nav-item  ds-border-neutral-5" routerLinkActive="ds-active ds-bg-blue-6 ds-text-neutral-1" >
+        <a [routerLink] = "'/help'" routerLinkActive="ds-text-neutral-1">Help</a> 
+        
+      </div> -->

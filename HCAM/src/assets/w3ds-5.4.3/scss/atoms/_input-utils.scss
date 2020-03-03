@@ -1,0 +1,410 @@
+@import '../_functions';
+@import '../_mixins';
+@import './utility/_motion-ui.scss';
+
+$input-entry-height: (50 / 19) * $font-size;
+$input-entry-height-small: (38 / 19) * $font-size;
+$input-entry-height-large: (75 / 19) * $font-size;
+$input-vertical-padding: $font-size * .5;
+$input-small-modifier: .375;
+$input-large-modifier: 2.325;
+
+$input-border-color: get-color('neutral', 3);
+$input-bg-color: get-color('neutral', 0);
+$input-border-color-focus: get-color('neutral', 5);
+$input-bg-color-focus: get-color('neutral', 0);
+
+$input-disabled-background: get-color('neutral', 2);
+$input-disabled-border: get-color('neutral', 3);
+$input-disabled-text: get-color('neutral', 6);
+// $input-disabled-background-darkbg: $light-warm-neutral-dark;
+// $input-disabled-border-darkbg: $warm-neutral-light;
+// $input-disabled-text-darkbg: $warm-neutral-light;
+
+$input-control-border-color: get-color('neutral-warm', 5);
+$input-control-checked-color: get-color('blue', 5);
+$input-control-checked-color-hover: get-contextual-color('blue', 4);
+$input-control-disabled-checked: get-color('neutral', 3);
+$input-radio-control-disabled-checked: get-color('neutral', 4);
+$input-radio-control-active-offset: 3px; // ( 3 / 19 ) * 1rem doesn't give a whole number, ends up with misalignment
+
+$toggle-control-width: (4.4rem * .75) * $font-size-px / 1rem;
+$toggle-control-height: 1.5rem;
+$toggle-control-bg: get-color('neutral', 1);
+$toggle-control-bg-hover: get-color('blue', 1);
+$toggle-border-width: 2px;
+$toggle-box-shadow-color: rgba(get-color('neutral', 7), .83);
+$toggle-checked-color: get-color('blue', 5);
+$toggle-checked-color-hover: get-contextual-color('blue', 4);
+$toggle-checked-disabled-bg: get-color('neutral', 3);
+
+// contextual colors
+$input-error-red-bg: get-contextual-color('red', 0);
+$input-error-red-tab: get-contextual-color('red', 3);
+$input-error-red-text: get-contextual-color('red', 3);
+$input-warning-yellow-bg: get-contextual-color('yellow', 0);
+$input-warning-yellow-tab: get-contextual-color('yellow', 3);
+$input-warning-yellow-text: get-color('neutral', 7);
+$input-success-green-tab: get-contextual-color('green', 2);
+$input-success-green-text: get-contextual-color('green', 4);
+
+@mixin input-container {
+	@include margin-bottom;
+	padding-bottom: $font-size * nth($spacing-list, 2);
+}
+
+@mixin offset-label-msg {
+	padding: 0 .5rem;
+}
+
+@mixin input-label {
+	@include offset-label-msg;
+	@include label;
+	@include text-small;
+	display: block;
+	margin-bottom: $margin-bottom * 2 / 3;
+}
+
+@mixin input-entry {
+	@include font-weight('regular');
+
+	background-color: $input-bg-color;
+	color: $font-color-default;
+	display: block;
+	font-family: $font-family;
+	font-size: $font-size * nth($spacing-list, 2);
+	line-height: $font-line-height;
+	padding: $input-vertical-padding .5rem;
+	position: relative;
+	width: 100%;
+
+	&:not(textarea) {
+		height: $input-entry-height;
+		padding-bottom: unset;
+		padding-top: unset;
+	}
+}
+
+@mixin input-entry-bordered {
+	border: 2px solid $input-border-color;
+	border-radius: 2px;
+	// transition-duration: $transition-duration;
+	// transition-property: background-color, border-color;
+	// transition-timing-function: $transition-function;
+	transition: background-color $fade-opacity, border-color $fade-opacity;
+
+	&:focus {
+		@include focus-style;
+		background-color: $input-bg-color-focus;
+		border-color: $input-border-color-focus;
+	}
+}
+
+@mixin input-entry-disabled {
+	background-color: $input-disabled-background;
+	border-color: $input-disabled-border;
+	cursor: not-allowed;
+}
+
+@mixin input-entry-size($height) {
+	height: $height;
+}
+
+@mixin input-contextual-background($tab-color, $bg-color) {
+	background: $bg-color;
+	background: linear-gradient(to right, $tab-color 8px, $bg-color 8px, $bg-color 100%); // sass-lint:disable-line no-duplicate-properties
+	padding-left: .83rem;
+}
+
+@mixin input-text-error {
+	@include input-contextual-background($input-error-red-tab, $input-error-red-bg);
+}
+
+@mixin input-text-warning {
+	@include input-contextual-background($input-warning-yellow-tab, $input-warning-yellow-bg);
+}
+
+@mixin input-text-success {
+	@include input-contextual-background($input-success-green-tab, $input-bg-color);
+}
+
+@mixin input-msg {
+	@include offset-label-msg;
+	@include text-small;
+	margin-bottom: -.83rem;
+	padding-top: .5rem;
+}
+
+@mixin input-hidden {
+	height: 1px;
+	opacity: 0;
+	position: absolute;
+	width: 1px;
+}
+
+@mixin input-select {
+	@include input-entry-bordered;
+	background-color: inherit;
+	padding: .48rem .25rem;
+	position: relative;
+
+	select {
+		@include label;
+		background-color: inherit;
+		border: 0;
+		margin-bottom: 0;
+		padding: .25rem .5rem;
+		position: relative;
+		width: 100%;
+		z-index: $z-base;
+
+		&:focus {
+			@include focus-style;
+		}
+	}
+}
+
+@mixin input-select-disabled {
+	@include input-entry-disabled;
+
+	select {
+		color: $input-disabled-text;
+		cursor: not-allowed;
+	}
+}
+
+@mixin input-radio-and-checkbox {
+	@include input-label;
+	@include font-weight('regular');
+	// adding flex-box here for long labels/text-wrapping
+	align-items: flex-start;
+	display: flex;
+	font-family: $font-family;
+	padding: 0;
+
+	input {
+		@include input-hidden;
+	}
+
+	span {
+		// flex-shrink to ensure the size of the control
+		flex-shrink: 100;
+		// margin to center first line to the control, provide horizontal separation
+		margin: 8px 0 0 4px;
+	}
+}
+
+@mixin input-control {
+	border: 2px solid $input-control-border-color;
+	border-radius: 2px;
+	display: inline-block;
+	height: 1.51rem;
+	padding-right: .5rem;
+	position: relative;
+	top: .1rem;
+	// transition-duration: $transition-duration;
+	// transition-property: border-color, border-width, background-color;
+	transition: border-color $fade-opacity, border-width $fade-opacity, background-color $fade-opacity;
+	vertical-align: bottom;
+	width: 1.51rem;
+
+	&:hover {
+		border-color: $input-control-checked-color;
+	}
+
+	&::after {
+		bottom: 0;
+		content: '';
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		// transition-duration: $transition-duration;
+		// transition-property: background-color, bottom, left, right, top;
+		// transition-timing-function: $transition-function;
+		transition: background-color $fade-opacity;
+	}
+}
+
+@mixin input-control-disabled {
+	background-color: $input-disabled-background;
+	border-color: $input-disabled-border !important;
+	border-width: 2px;
+	cursor: not-allowed;
+}
+
+@mixin input-control-radio {
+	border-radius: 100%;
+	height: 30px; // ( 30 / 19 ) * 1rem doesn't give a whole number, ends up with misalignment
+	width: 30px; // ( 30 / 19 ) * 1rem doesn't give a whole number, ends up with misalignment
+
+	&::after {
+		border-radius: 100%;
+	}
+}
+
+@mixin input-control-checked-background($bg-color) {
+	&::after {
+		background-color: $bg-color;
+	}
+}
+
+@mixin input-checkbox-disabled-checked {
+	@include input-control-checked-background($input-control-disabled-checked);
+}
+
+@mixin input-radio-disabled-checked {
+	@include input-control-checked-background($input-radio-control-disabled-checked);
+}
+
+@mixin input-control-radio-checked {
+	@include input-control-checked-background($input-control-checked-color);
+	border-color: $input-control-checked-color;
+
+	&::after {
+		bottom: $input-radio-control-active-offset;
+		left: $input-radio-control-active-offset;
+		right: $input-radio-control-active-offset;
+		top: $input-radio-control-active-offset;
+		transform: translateZ(0);
+	}
+
+	&:hover {
+		border-color: $input-control-checked-color-hover;
+
+		&::after {
+			background-color: $input-control-checked-color-hover;
+		}
+	}
+}
+
+@mixin input-control-checkbox-checked {
+	@include input-control-checked-background($input-control-checked-color);;
+	border-color: $input-control-checked-color;
+
+	&::before {
+		border-color: get-color('neutral', 0);
+		border-style: solid;
+		border-width: 0 3px 3px 0;
+		content: '';
+		display: block;
+		height: .77rem;
+		left: 35%;
+		position: absolute;
+		top: 19%;
+		transform: rotateZ(42deg);
+		width: .41rem;
+		z-index: $z-low;
+	}
+
+	&:hover {
+		border-color: $input-control-checked-color-hover;
+
+		&::after {
+			background-color: $input-control-checked-color-hover;
+		}
+	}
+}
+
+@mixin input-control-checkbox-indeterminate {
+	&::before {
+		border-width: 3px 0 0;
+		left: 50%;
+		top: 42%;
+		transform: translateX(-50%);
+		width: .77rem;
+	}
+}
+
+@mixin input-control-toggle {
+	background: $toggle-control-bg;
+	border: $toggle-border-width solid $input-control-border-color;
+	border-radius: 1.5em;
+	display: inline-block;
+	height: $toggle-control-height;
+	position: relative;
+	// transition-duration: $transition-duration;
+	// transition-property: background-color, border-color;
+	// transition-timing-function: $transition-function;
+	transition: background-color $fade-opacity, border-color $fade-opacity;
+	width: $toggle-control-width;
+
+	&::after {
+		background-color: $white;
+		border: $toggle-border-width solid $input-control-border-color;
+		border-radius: 100%;
+		content: '';
+		height: $toggle-control-height;
+		left: -2px;
+		position: absolute;
+		top: -2px;
+		// transition-duration: $transition-duration;
+		// transition-property: left, border-color;
+		// transition-timing-function: $transition-function;
+		transition: background-color $fade-opacity, border-color $fade-opacity, left $move-x;
+		width: $toggle-control-height;
+	}
+
+	&:hover {
+		background-color: $toggle-control-bg-hover;
+	}
+}
+
+@mixin input-control-toggle-checked {
+	background-color: $toggle-checked-color;
+	border-color: $toggle-checked-color;
+
+	&::after {
+		border-color: $toggle-checked-color;
+		left: $toggle-control-width - rem-to-px($toggle-control-height) - $toggle-border-width;
+	}
+
+	&:hover {
+		background-color: $toggle-checked-color-hover;
+		border-color: $toggle-checked-color-hover;
+
+		&::after {
+			border-color: $toggle-checked-color-hover;
+		}
+	}
+}
+
+@mixin input-control-toggle-disabled {
+	border-color: $input-border-color;
+	cursor: not-allowed;
+
+	&::after {
+		border-color: $input-border-color;
+	}
+
+	&:hover {
+		background-color: $toggle-control-bg;
+	}
+}
+
+@mixin input-control-toggle-disabled-checked {
+	background-color: $toggle-checked-disabled-bg;
+	border-color: $input-border-color;
+
+	&::after {
+		border-color: $input-border-color;
+		left: $toggle-control-width - rem-to-px($toggle-control-height) - $toggle-border-width;
+	}
+}
+
+@keyframes animation-radio-and-checkbox {
+
+	from {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+
+	to {
+		bottom: $input-radio-control-active-offset;
+		left: $input-radio-control-active-offset;
+		right: $input-radio-control-active-offset;
+		top: $input-radio-control-active-offset;
+	}
+}

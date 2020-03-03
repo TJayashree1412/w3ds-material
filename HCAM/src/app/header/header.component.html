@@ -1,0 +1,5 @@
+<div class="ds-row">
+    <h1 class="ds-heading-2 ds-col-7 ds-mar-t-0 ds-mar-b-0 ds-text-neutral-1 ds-float-center"> US Host Country Assignment Model</h1>
+    <div class="ds-col-4 ds-mar-t-1 ds-text-neutral-1 ds-text-align-right" *ngIf="isUserAuthenticated()" > Welcome <b> {{username}} </b></div>
+    <div class="ds-col-1 ds-mar-t-1 ds-clickable ds-text-neutral-1 ds-mar-b-0 ds-float-right ds-text-align-center" *ngIf="isUserAuthenticated()"  (click)="SignOut()">Sign Out</div>
+</div>

@@ -1,0 +1,50 @@
+        <div class="ds-table-container">
+            <table width = "100%" class="ds-table " height = "100%">
+               <tr>
+                 <td width ="50%">
+                   <img class="logo" src="assets/onboarding.jpg">
+                   </td>
+                   <td width ="50%">
+                     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="ds-affix-bottom">
+                        <table class="ds-table  ds-no-border" width ="100%" >
+                          <tr>
+                            <td>
+                              <img class="logo" src="assets/offboarding.png">
+                            </td>
+                          </tr>
+                       <tr>
+                         <td width ="40%">
+                              <input type="text" class="ds-button ds-basic" formControlName="userName"
+                              placeholder="Email">
+                          </td>
+                          <td width ="60%"></td>
+                         </tr>
+                      <tr><td>
+                          <input type="password" class="ds-button ds-basic" formControlName="password"
+                            placeholder="Password">
+                            <div class="ds-col-5">  <span id="pwdHelp" class="ds-input-label"><a href="https://w3.ibm.com/password">Forgot password?</a> </span></div>
+                            
+                      </td>
+                    <td></td></tr>
+                       <!-- <div class="ds-button ds-width-auto"> -->
+                        <tr><td>
+                          <table>
+                            <tr><td>
+                         <button class="ds-button ds-width-auto ds-text-align-justify" type="submit"
+                           [disabled]="!loginForm.valid">Login</button> </td>
+                           <td><button class="ds-button ds-danger ds-width-auto ds-text-align-justify">Reset</button></td>
+                          </tr>
+                          </table>
+                          </td>
+                      </tr>
+                    </table>
+                    <p><b>The application current version is compatible with Mozilla Firefox 3.0 and IE 6.0 or Higher versions. <br> Please make sure JavaScript is enabled on your web browser for US Assignee Database Application to function correctly.</b></p>
+                  </form>
+                   </td>
+                 </tr>
+               <!-- </tbody> -->
+             </table>
+           </div>
+     
+     
+     

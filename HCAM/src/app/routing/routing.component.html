@@ -1,0 +1,10 @@
+
+        <div class="ds-panel ds-no-border ds-fullwidth ds-mar-b-10">
+            <div class="ds-row">
+                <div  *ngIf="isUserAuthenticated()" class="ds-col-sm-2 ds-col-md-2 ds-col-xl-2">
+                    <app-navigation></app-navigation>
+                </div>
+            <router-outlet></router-outlet>
+            </div>
+        </div>
+

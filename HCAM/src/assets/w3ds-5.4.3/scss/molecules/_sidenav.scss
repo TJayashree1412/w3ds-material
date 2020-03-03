@@ -1,0 +1,266 @@
+@import '../atoms/_typography-utils';
+@import '../atoms/_button-utils';
+
+$side-nav-spacer: $font-size * nth($spacing-list, 2);
+$side-nav-link-color: get-color('neutral', 7);
+$side-nav-highlight-blue: get-color('blue', 5);
+$side-nav-item-highlight-background: get-color('blue', 0);
+$side-nav-left-border-color: get-color('neutral', 3);
+$side-nav-background-color: get-color('neutral', 0);
+$side-nav-mobile-mask: rgba(get-color('neutral', 7), .73);
+
+// hacky way to add to nav in mobile
+// $scrollspy-background-filter: rgba(35, 35, 35, .73);
+
+@function spacing-function($multiplier) {
+	@return $side-nav-spacer * $multiplier;
+}
+
+%side-nav-link-styling {
+	color: $side-nav-link-color;
+	text-decoration: none;
+}
+
+%side-nav-default-text-sizing {
+	@include text-small;
+}
+
+%side-nav {
+	@extend %side-nav-default-text-sizing;
+	border-right: 1px solid $side-nav-left-border-color;
+	height: 100%;
+	overflow-y: scroll;
+	position: fixed;
+	top: 0;
+	transition: opacity 200ms ease;
+
+	&.#{$framework-class-prefix}-right {
+		border-left: 1px solid $side-nav-left-border-color;
+		border-right: 0;
+	}
+
+	a {
+		@extend %side-nav-link-styling;
+	}
+
+}
+
+%side-nav-item {
+	@include button-vertical-padding;
+	line-height: $button-line-height;
+	padding-left: spacing-function(1);
+
+	a {
+		@include text-small;
+		@include font-weight('normal', true);
+	}
+}
+
+%side-nav-item-sub {
+	@include button-vertical-padding;
+	line-height: $button-line-height;
+	padding-left: spacing-function(2);
+
+	a {
+		@include font-weight('light', true);
+		font-size: map-get(map-get($headings, 'h5'), value);
+	}
+}
+
+%side-nav-item-sub-sub {
+	@include button-vertical-padding('small');
+	padding-left: spacing-function(3);
+
+	a {
+		@include font-weight('light', true);
+
+		&:hover {
+			@include font-weight('normal', true);
+		}
+	}
+}
+
+%side-nav-item-active {
+	background-color: $side-nav-item-highlight-background;
+	position: relative;
+
+	&::after {
+		border-left: 3px solid $side-nav-highlight-blue;
+		bottom: 0;
+		content: '';
+		left: 0;
+		position: absolute;
+		top: 0;
+	}
+}
+
+.#{$framework-class-prefix}-side-nav,
+.#{$framework-class-prefix}-scrollspy-nav {
+	@extend %side-nav;
+
+	&:not(.#{$framework-class-prefix}-right) {
+		@include affix-left;
+	}
+
+	&.#{$framework-class-prefix}-right {
+		@include affix-right;
+	}
+
+	.#{$framework-class-prefix}-nav-item {
+		@extend %side-nav-item;
+	}
+
+
+	.#{$framework-class-prefix}-nav-section {
+		display: block;
+		visibility: hidden;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.2s ease-out, visibility 0s 0.1s linear;
+
+		&.#{$framework-class-prefix}-expanded {
+			display: block;
+			visibility: visible;
+			max-height: 2000px;
+			overflow: hidden;
+			transition: max-height 0.5s ease-in, visibility 0s 0.1s linear;
+		}
+	}
+
+	.#{$framework-class-prefix}-nav-sub-item {
+		@extend %side-nav-item-sub;
+
+		& + .#{$framework-class-prefix}-nav-section {
+			.#{$framework-class-prefix}-nav-sub-item {
+				@extend %side-nav-item-sub-sub;
+			}
+		}
+	}
+
+	.#{$framework-class-prefix}-active {
+		@extend %side-nav-item-active;
+	}
+}
+
+// ------------------------------------------
+// ------------------ MOBILE ----------------
+// ------------------------------------------
+
+%side-nav-mobile {
+	a {
+		border-radius: 0;
+		margin-bottom: 0;
+	}
+}
+
+%side-nav-mobile-buttons {
+	@include affix;
+	@include affix-bottom;
+	background-color: $white;
+	padding-left: 0;
+	padding-right: 0;
+	// z-index: 50; TODO: test this
+	z-index: $z-low;
+}
+
+%side-nav-mobile-drawer {
+	background-color: $side-nav-background-color;
+	display: inline-block !important;
+	height: 100%;
+	// left: 50%;
+	left: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 6px;
+	top: 0;
+	width: 50%;
+	z-index: $z-high;
+
+	@media screen and (max-width: 475px) {
+		// left: 40%;
+		width: 60%;
+	}
+}
+
+%side-nav-mobile-spacer-active {
+	background-color: $side-nav-mobile-mask;
+	display: inline-block !important;
+	height: 100%;
+	pointer-events: all;	//NV: disable clicks/hover/etc
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: $z-mid;
+}
+
+.#{$framework-class-prefix}-side-nav-mobile {
+	@extend %side-nav-mobile;
+
+	.#{$framework-class-prefix}-side-nav-mobile-control {
+		@extend %side-nav-mobile-buttons;
+
+		&:first-child {
+			left: 0;
+		}
+
+		&:nth-child(2) {
+			left: ( 5 / 12 ) * 100%;
+		}
+	}
+
+	.#{$framework-class-prefix}-side-nav-mobile-open {
+		@extend %side-nav-mobile-buttons;
+		left: ( 10 / 12 ) * 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.#{$framework-class-prefix}-side-nav-mobile-spacer {
+	display: none;
+}
+
+.#{$framework-class-prefix}-side-nav-mobile-drawer-expanded {
+	overflow: scroll;
+
+	.#{$framework-class-prefix}-side-nav-mobile-drawer {
+		@extend %side-nav-mobile-drawer;
+	}
+
+	.#{$framework-class-prefix}-side-nav-mobile-spacer {
+		&.#{$framework-class-prefix}-active {
+			@extend %side-nav-mobile-spacer-active;
+		}
+	}
+}
+
+.#{$framework-class-prefix}-side-nav-mobile-open {
+
+	.#{$framework-class-prefix}-icon-close-m {
+		display: none;
+	}
+
+	&.#{$framework-class-prefix}-close-icon {
+
+		.#{$framework-class-prefix}-icon-menu-m {
+			display: none;
+		}
+
+		.#{$framework-class-prefix}-icon-close-m {
+			display: inline;
+		}
+	}
+}
+
+@include breakpoint-max('md') {
+	.#{$framework-class-prefix}-side-nav-mobile-drawer {
+		opacity: 0;
+		pointer-events: none;
+
+		&-expanded {
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+}
