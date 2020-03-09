@@ -12,6 +12,28 @@ import { HelpComponent } from './help/help.component' ;
 import { AllCompRequestComponent } from './all-comp-request/all-comp-request.component';
 import { OnboardingListComponent } from './onboarding-list/onboarding-list.component' ;
 import { HqOpsComponent } from './hq-ops/hq-ops.component' ;
+import { PendingActionComponent } from './pending-action/pending-action.component';
+import { ApproveCompComponent } from './approve-comp/approve-comp.component';
+import { RedeploymentTrackerComponent } from './redeployment-tracker/redeployment-tracker.component';
+import { OnsiteHireCompComponent } from './onsite-hire-comp/onsite-hire-comp.component';
+import { ImmediateActionComponent } from './immediate-action/immediate-action.component';
+import { ManagerActionComponent } from './manager-action/manager-action.component';
+import { DataSheetsComponent } from './data-sheets/data-sheets.component';
+import { CompViewsComponent } from './comp-views/comp-views.component';
+import { SearchComponent } from './search/search.component';
+import { ElectronicSignatureComponent } from './electronic-signature/electronic-signature.component';
+import { EmployeeAssignmentResponseComponent } from './employee-assignment-response/employee-assignment-response.component';
+import { H1BExtensionLCAInputComponent } from './h1-b-extension-lca-input/h1-b-extension-lca-input.component';
+import { RedeploymentCompletionChecklistComponent } from './redeployment-completion-checklist/redeployment-completion-checklist.component';
+import { EndClientNameComponent } from './end-client-name/end-client-name.component';
+import { RaiseCompRequestComponent } from './raise-comp-request/raise-comp-request.component';
+import { ObApproverComponent } from './ob-approver/ob-approver.component';
+import { OnboardingViewsComponent } from './onboarding-views/onboarding-views.component';
+import { GeneralViewsComponent } from './general-views/general-views.component';
+import { OnboardReportsComponent } from './onboard-reports/onboard-reports.component';
+import { FmlaViewComponent } from './fmla-view/fmla-view.component' ;
+import { StaffingTeamComponent } from './staffing-team/staffing-team.component' ;
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -23,10 +45,32 @@ const routes: Routes = [
   { path: 'allCompHistory', component: AllCompHistoryComponent  },
   { path: 'drLeaveRequest', component: DrLeaveRequestComponent  },
   { path: 'assignmentStatus', component: AssignmentStatusComponent },
-  { path: 'help', component: HelpComponent },
+  { path: 'hqOps', component: HqOpsComponent },
   { path: 'allCompRequest', component: AllCompRequestComponent },
   { path: 'onboardingList', component: OnboardingListComponent },
-  { path: 'hqOps', component: HqOpsComponent },
+  { path: 'viewPendingAction', component: PendingActionComponent },
+  { path: 'viewApprvpending', component: ApproveCompComponent },
+  { path: 'viewLctTrnsfr', component: RedeploymentTrackerComponent },
+  { path: 'viewOnsiteHire', component: OnsiteHireCompComponent },
+  { path: 'viewProcessRecord', component: ImmediateActionComponent },
+  { path: 'compteamMngrView', component: ManagerActionComponent },
+  { path: 'viewAllDataSheets', component: DataSheetsComponent },
+  { path: 'compensationViews', component: CompViewsComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'electronicSignature', component: ElectronicSignatureComponent },
+  { path: 'empAssignResp', component: EmployeeAssignmentResponseComponent },
+  { path: 'ViewH1BLCAExtension', component: H1BExtensionLCAInputComponent },
+  { path: 'relocCompChkListHome', component: RedeploymentCompletionChecklistComponent },
+  { path: 'ViewEndClientDtl', component: EndClientNameComponent },
+  { path: 'listCompReqCtdByCS', component: RaiseCompRequestComponent },
+  { path: 'obApprover', component: ObApproverComponent },
+  { path: 'onboaringViews', component: OnboardingViewsComponent },
+  { path: 'generalViews', component: GeneralViewsComponent },
+  { path: 'onboardReports', component: OnboardReportsComponent },
+  { path: 'fmlaView', component: FmlaViewComponent },
+  { path: 'compensationListST', component: StaffingTeamComponent },
+  { path: 'help', component: HelpComponent },
+  
   
 ];
 

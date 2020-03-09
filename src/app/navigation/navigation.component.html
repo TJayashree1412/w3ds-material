@@ -31,7 +31,7 @@
           </li>
 
           <li *ngIf="Roles.includes('VCMSTLST')" class="ds-nav-item">
-            <a [routerLink] = "'/staffingTeam'" class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3">Staffing Team</a>
+            <a [routerLink] = "'/compensationListST'" class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3">Staffing Team</a>
           </li>
 
           <li *ngIf="Roles.includes('VHQops')" class="ds-nav-item">
@@ -41,40 +41,40 @@
                 <li *ngIf="Roles.includes('VCMTALL')" id="allCompReq" class="ds-nav-item "><a class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/allCompRequest'">All Comp Requets</a>
                      <ul class="ds-nav-list ds-nav-third-level ds-z-medium">
                        <li *ngIf="Roles.includes('VCMTLST')"class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Compensation</a></li>
-                       <li *ngIf="Roles.includes('VCMPPEND')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Pending action</a></li>
-                       <li *ngIf="Roles.includes('COMPAPPR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Approve comp</a></li>
-                       <li *ngIf="Roles.includes('VCMPLCT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Redeployment tracker</a></li>
-                       <li *ngIf="Roles.includes('VONSITE')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Onsite hire comp</a></li>
-                       <li *ngIf="Roles.includes('VPROCES')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Immediate action</a></li>
-                       <li *ngIf="Roles.includes('VCMPMGR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Manager action</a></li>
-                       <li *ngIf="Roles.includes('VCOMPDS')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Data sheets</a></li>
-                       <li *ngIf="Roles.includes('VCMPVIEW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Comp views</a></li>
-                       <li *ngIf="Roles.includes('VELCSIGN')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Electronic signature</a></li>
-                       <li *ngIf="Roles.includes('VEARH')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Employee assignment response</a></li>
-                       <li *ngIf="Roles.includes('VLCAINP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >H1B extension LCA input </a></li>
-                       <li *ngIf="Roles.includes('VRCOMPCL')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Redeployment completion check list</a></li>
-                       <li *ngIf="Roles.includes('ENDCLT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >End client name</a></li>
-                       <li *ngIf="Roles.includes('NCOMPREQ')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Raise compensation request</a></li>
+                       <li *ngIf="Roles.includes('VCMPPEND')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewPendingAction'" >Pending action</a></li>
+                       <li *ngIf="Roles.includes('COMPAPPR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewApprvpending'" >Approve comp</a></li>
+                       <li *ngIf="Roles.includes('VCMPLCT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewLctTrnsfr'" >Redeployment tracker</a></li>
+                       <li *ngIf="Roles.includes('VONSITE')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewOnsiteHire'" >Onsite hire comp</a></li>
+                       <li *ngIf="Roles.includes('VPROCES')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewProcessRecord'" >Immediate action</a></li>
+                       <li *ngIf="Roles.includes('VCMPMGR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compteamMngrView'" >Manager action</a></li>
+                       <li *ngIf="Roles.includes('VCOMPDS')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewAllDataSheets'" >Data sheets</a></li>
+                       <li *ngIf="Roles.includes('VCMPVIEW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compensationViews'" >Comp views</a></li>
+                       <li *ngIf="Roles.includes('VELCSIGN')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/electronicSignature'" >Electronic signature</a></li>
+                       <li *ngIf="Roles.includes('VEARH')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/empAssignResp'" >Employee assignment response</a></li>
+                       <li *ngIf="Roles.includes('VLCAINP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewH1BLCAExtension'" >H1B extension LCA input </a></li>
+                       <li *ngIf="Roles.includes('VRCOMPCL')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/relocCompChkListHome'" >Redeployment completion check list</a></li>
+                       <li *ngIf="Roles.includes('ENDCLT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewEndClientDtl'" >End client name</a></li>
+                       <li *ngIf="Roles.includes('NCOMPREQ')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/listCompReqCtdByCS'" >Raise compensation request</a></li>
                      </ul>
                     </li>
           <li *ngIf="Roles.includes('VOBLIST')" class="ds-nav-item">
             <a class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" id="onboarding" [routerLink] ="'/onboardingList'">onboarding</a>
               <ul class="ds-nav-list ds-nav-third-level ds-z-medium">
-                <li *ngIf="Roles.includes('OBAPPR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Onboarding Approver</a></li>
-                <li *ngIf="Roles.includes('VOBVIEW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Onboarding views </a></li>
-                <li *ngIf="Roles.includes('VGENVIEW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >General views</a></li>
-                <li *ngIf="Roles.includes('VOBREP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Onboard Reports</a></li>
-                <li *ngIf="Roles.includes('FMLAAPPR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >FMLA Approver</a></li>
+                <li *ngIf="Roles.includes('OBAPPR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/obApprover'" >Onboarding Approver</a></li>
+                <li *ngIf="Roles.includes('VOBVIEW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/onboaringViews'" >Onboarding views </a></li>
+                <li *ngIf="Roles.includes('VGENVIEW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/generalViews'" >General views</a></li>
+                <li *ngIf="Roles.includes('VOBREP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/onboardReports'" >Onboard Reports</a></li>
+                <li *ngIf="Roles.includes('FMLAAPPR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/fmlaView'" >FMLA Approver</a></li>
               </ul>
            </li>
 
            <li *ngIf="Roles.includes('VOBADM')" class="ds-nav-item">
-            <a class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" id="onboarding" [routerLink] ="'/onboardingList'">OB Admin</a>
+            <a class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" id="onboarding" [routerLink] ="'/obAdmin'">OB Admin</a>
               <ul class="ds-nav-list ds-nav-third-level ds-z-medium">
-                <li *ngIf="Roles.includes('VNBLSTOB')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Notice board</a></li>
-                <li *ngIf="Roles.includes('VDOCSOB')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Documents </a></li>
-                <li *ngIf="Roles.includes('VOBLTEMP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Letter templates</a></li>
-                <li *ngIf="Roles.includes('VHLPCNT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Help content</a></li>
+                <li *ngIf="Roles.includes('VNBLSTOB')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewOBNB'" >Notice board</a></li>
+                <li *ngIf="Roles.includes('VDOCSOB')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewOBDoc'" >Documents </a></li>
+                <li *ngIf="Roles.includes('VOBLTEMP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewLetterTemplates'" >Letter templates</a></li>
+                <li *ngIf="Roles.includes('VHLPCNT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/helpContent'" >Help content</a></li>
                
               </ul>
            </li>
@@ -84,50 +84,49 @@
         </ul>
           </li>
           <li *ngIf="Roles.includes('VTRALIST')" class="ds-nav-item">
-            <a [routerLink] = "'/hqOps'"  id="travelList" class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-neutral-1">Immigration</a>
+            <a [routerLink] = "'/immigration'"  id="travelList" class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-neutral-1">Immigration</a>
               <ul class="ds-nav-list ds-nav-second-level ds-z-high">
-                <li *ngIf="Roles.includes('VPLLIST')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Pre-Landing List</a></li>
-                <li *ngIf="Roles.includes('VIMREP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Immigration reports </a></li>
+                <li *ngIf="Roles.includes('VPLLIST')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/preLandingList'" >Pre-Landing List</a></li>
+                <li *ngIf="Roles.includes('VIMREP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/immReportsHome'" >Immigration reports </a></li>
               </ul>
           </li>
 
           <li *ngIf="Roles.includes('VAPPDOCS')" class="ds-nav-item">
-            <a [routerLink] = "'/hqOps'"  class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-neutral-1">Documents</a>
+            <a [routerLink] = "'/ViewAppDocs'"  class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-neutral-1">Documents</a>
            </li>
 
            <li *ngIf="Roles.includes('VADMHM')" class="ds-nav-item">
-            <a class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" id="onboarding" [routerLink] ="'/onboardingList'">Administrator</a>
+            <a class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-contextual-red-3" id="onboarding" [routerLink] ="'/admHome'">Administrator</a>
               <ul class="ds-nav-list ds-nav-second-level ds-z-medium">
-                <li *ngIf="Roles.includes('VPARLIST')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Parameters</a></li>
-                <li *ngIf="Roles.includes('VIBMIC')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >US HCAM Contacts </a></li>
-                <li *ngIf="Roles.includes('VUSACLST')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >US account contacts</a></li>
-                <li *ngIf="Roles.includes('VNBD')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Notice board</a></li>
-                <li *ngIf="Roles.includes('VDOCSADM')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Documents</a></li>
-                <li *ngIf="Roles.includes('VOESDATA')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" > OES Data</a>
+                <li *ngIf="Roles.includes('VPARLIST')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewParam'" >Parameters</a></li>
+                <li *ngIf="Roles.includes('VIBMIC')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewIBMI'" >US HCAM Contacts </a></li>
+                <li *ngIf="Roles.includes('VUSACLST')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewAcnt'" >US account contacts</a></li>
+                <li *ngIf="Roles.includes('VNBD')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewNB'" >Notice board</a></li>
+                <li *ngIf="Roles.includes('VDOCSADM')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewDoc'" >Documents</a></li>
+                <li *ngIf="Roles.includes('VOESDATA')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/GetPrevail'" > OES Data</a>
                   <ul class="ds-nav-list ds-nav-third-level ds-z-medium">
-                    <li *ngIf="Roles.includes('VPREVAIL')"class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Prewailing wages</a></li>
-                    <li *ngIf="Roles.includes('VGEOTIER')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Geo tier</a></li>
-                    <li *ngIf="Roles.includes('VGEOSAL')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Geo Sal</a></li>
-                    <li *ngIf="Roles.includes('VSALSEL')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Salary select</a></li>
+                    <li *ngIf="Roles.includes('VPREVAIL')"class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/GetPrevail'" >Prewailing wages</a></li>
+                    <li *ngIf="Roles.includes('VGEOTIER')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/GetGeoTier'" >Geo tier</a></li>
+                    <li *ngIf="Roles.includes('VGEOSAL')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ShowGeoSal'" >Geo Sal</a></li>
+                    <li *ngIf="Roles.includes('VSALSEL')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ShowSalSelect'" >Salary select</a></li>
                   </ul>
                 </li>
-                <li *ngIf="Roles.includes('VZIPCODE')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Zip codes</a></li>
-                <li *ngIf="Roles.includes('VSETALLW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Settlement allowances</a></li>
-                <li *ngIf="Roles.includes('VPAYDT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Payroll dates</a></li>
-                <li *ngIf="Roles.includes('VSECTIND')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Sector-Industry</a></li>
-                <li *ngIf="Roles.includes('VLETTEMP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Upload letter templates</a></li>
-                <li *ngIf="Roles.includes('VHOLIDAY')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Holiday list</a></li>
-                <li *ngIf="Roles.includes('VSSTATE')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Sick state details</a></li>
-                <li *ngIf="Roles.includes('VCOUNT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Country codes</a></li>
-                <li *ngIf="Roles.includes('VFILEUP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >File uploads</a></li>
-                <li *ngIf="Roles.includes('VSALPERC')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/compHome'" >Salary percentage</a></li>
+                <li *ngIf="Roles.includes('VZIPCODE')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ShowZip'" >Zip codes</a></li>
+                <li *ngIf="Roles.includes('VSETALLW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/ViewSettle'" >Settlement allowances</a></li>
+                <li *ngIf="Roles.includes('VPAYDT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/listPayrollDates'" >Payroll dates</a></li>
+                <li *ngIf="Roles.includes('VSECTIND')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/listSectIndData'" >Sector-Industry</a></li>
+                <li *ngIf="Roles.includes('VLETTEMP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewLetterTemplates'" >Upload letter templates</a></li>
+                <li *ngIf="Roles.includes('VHOLIDAY')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/listHolidayDates'" >Holiday list</a></li>
+                <li *ngIf="Roles.includes('VSSTATE')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewSickStateList'" >Sick state details</a></li>
+                <li *ngIf="Roles.includes('VCOUNT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/viewcountryCodes'" >Country codes</a></li>
+                <li *ngIf="Roles.includes('VFILEUP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/uploadFilesHome'" >File uploads</a></li>
+                <li *ngIf="Roles.includes('VSALPERC')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-red-3" [routerLink] ="'/SalRangePercentageHome'" >Salary percentage</a></li>
                 
               </ul>
-           </li>
-
+            </li>
            <ul class="ds-nav-list ds-nav-top-level">
            <li *ngIf="Roles.includes('VHELP')" class="ds-nav-item">
-            <a [routerLink] = "'/hqOps'"  class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-neutral-1">Help</a>
+            <a [routerLink] = "'/help'"  class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-red-3" routerLinkActive="ds-text-neutral-1">Help</a>
            </li>
          </ul>
         </ul>
