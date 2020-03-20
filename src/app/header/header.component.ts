@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   @Input() username:string
+  profilePic:any;
 
   constructor(private router:Router ) {}
 
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit {
     console.log("user is :::" ,user);
     this.username = user;
     console.log(this.username);
+    this.profilePic="https://w3-services1.w3-969.ibm.com/myw3/unified-profile-photo/v1/image/"+sessionStorage.getItem("loggeduser");
   }
   SignOut(){
     sessionStorage.clear();
