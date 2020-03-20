@@ -35,28 +35,29 @@
           </li>
 
           <li *ngIf="Roles.includes('VHQops')" class="ds-nav-item">
+            
             <a [routerLink] = "'/hqOps'"  id="HQops" class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-blue-5" routerLinkActive="ds-text-neutral-1">HQ Ops</a>
               <ul class="ds-nav-list ds-nav-second-level ds-z-high">
+                <li *ngIf="Roles.includes('VIMMGLST')" class="ds-nav-item " ><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/Home'" >Immigration</a></li>   
                 <li *ngIf="Roles.includes('VCMTALL')" id="allCompReq" class="ds-nav-item " ><a class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/allCompRequest'">All Comp Requets</a>
                      <ul class="ds-nav-list ds-nav-third-level ds-z-medium" style="overflow:scroll;height: 300px;">
-                       <li *ngIf="Roles.includes('VCMTLST')"class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/compHome'" >Compensation</a></li>
-                       <li *ngIf="Roles.includes('VCMPPEND')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewPendingAction'" >Pending action</a></li>
-                       <li *ngIf="Roles.includes('COMPAPPR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewApprvpending'" >Approve comp</a></li>
-                       <li *ngIf="Roles.includes('VCMPLCT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewLctTrnsfr'" >Redeployment tracker</a></li>
-                       <li *ngIf="Roles.includes('VONSITE')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewOnsiteHire'" >Onsite hire comp</a></li>
-                       <li *ngIf="Roles.includes('VPROCES')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewProcessRecord'" >Immediate action</a></li>
-                       <li *ngIf="Roles.includes('VCMPMGR')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/compteamMngrView'" >Manager action</a></li>
-                       <li *ngIf="Roles.includes('VCOMPDS')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewAllDataSheets'" >Data sheets</a></li>
-                       <li *ngIf="Roles.includes('VCMPVIEW')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/compensationViews'" >Comp views</a></li>
-                       <li *ngIf="Roles.includes('VELCSIGN')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/electronicSignature'" >Electronic signature</a></li>
-                       <li *ngIf="Roles.includes('VEARH')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/empAssignResp'" >Employee assignment response</a></li>
-                       <li *ngIf="Roles.includes('VLCAINP')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/ViewH1BLCAExtension'" >H1B extension LCA input </a></li>
-                       <li *ngIf="Roles.includes('VRCOMPCL')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/relocCompChkListHome'" >Redeployment completion check list</a></li>
-                       <li *ngIf="Roles.includes('ENDCLT')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/ViewEndClientDtl'" >End client name</a></li>
-                       <li *ngIf="Roles.includes('NCOMPREQ')" class="ds-nav-item"><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/listCompReqCtdByCS'" >Raise compensation request</a></li>
+                       <li *ngIf="Roles.includes('VCMTLST')"class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/compHome'" >Compensation</a></li>
+                       <li *ngIf="Roles.includes('VCMPPEND')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewPendingAction'" >Pending action</a></li>
+                       <li *ngIf="Roles.includes('COMPAPPR')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewApprvpending'" >Approve comp</a></li>
+                       <li *ngIf="Roles.includes('VCMPLCT')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewLctTrnsfr'" >Redeployment tracker</a></li>
+                       <li *ngIf="Roles.includes('VONSITE')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewOnsiteHire'" >Onsite hire comp</a></li>
+                       <li *ngIf="Roles.includes('VPROCES')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewProcessRecord'" >Immediate action</a></li>
+                       <li *ngIf="Roles.includes('VCMPMGR')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/compteamMngrView'" >Manager action</a></li>
+                       <li *ngIf="Roles.includes('VCOMPDS')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/viewAllDataSheets'" >Data sheets</a></li>
+                       <li *ngIf="Roles.includes('VCMPVIEW')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/compensationViews'" >Comp views</a></li>
+                       <li *ngIf="Roles.includes('VELCSIGN')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/electronicSignature'" >Electronic signature</a></li>
+                       <li *ngIf="Roles.includes('VEARH')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/empAssignResp'" >Employee assignment response</a></li>
+                       <li *ngIf="Roles.includes('VLCAINP')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/ViewH1BLCAExtension'" >H1B extension LCA input </a></li>
+                       <li *ngIf="Roles.includes('VRCOMPCL')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/relocCompChkListHome'" >Redeployment completion check list</a></li>
+                       <li *ngIf="Roles.includes('ENDCLT')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/ViewEndClientDtl'" >End client name</a></li>
+                       <li *ngIf="Roles.includes('NCOMPREQ')" class="ds-nav-item"><a class="ds-nav-link ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/listCompReqCtdByCS'" >Raise compensation request</a></li>
                      </ul>
                     </li>
-                    <li *ngIf="Roles.includes('VCMTALL')" class="ds-nav-item " ><a class="ds-nav-link" routerLinkActive="ds-text-contextual-blue-5" [routerLink] ="'/Home'" >Immigration</a></li>   
           <li *ngIf="Roles.includes('VOBLIST')" class="ds-nav-item">
             <a class="ds-nav-link ds-mar-b-0 ds-combo-parent ds-active  ds-text-contextual-blue-5" routerLinkActive="ds-text-contextual-blue-5" id="onboarding" [routerLink] ="'/onboardingList'">onboarding</a>
               <ul class="ds-nav-list ds-nav-third-level ds-z-medium">
