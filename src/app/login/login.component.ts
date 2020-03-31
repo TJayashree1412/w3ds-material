@@ -36,7 +36,8 @@ export class LoginComponent implements OnInit {
      sessionStorage.setItem('loggeduser',this.loginForm.value.userName);
      sessionStorage.setItem('userdata',JSON.stringify(getdata));
      sessionStorage.setItem('isAuthenticated',"true");
-    this.router.navigate(['/Home']);
+     console.log("Logged in");
+    this.router.navigate(['/privacyNotice']);
      console.log("User Data: "+sessionStorage.getItem("userdata"));
   
     this.errorMessage='Incorrect IntranetID or Password';

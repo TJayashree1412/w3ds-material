@@ -13,7 +13,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { DataService } from './data.service';
-import { HomePageComponent } from './home-page/home-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompensationHomeComponent } from './compensation-home/compensation-home.component';
 import { MyCompRequestsComponent } from './my-comp-requests/my-comp-requests.component';
@@ -44,7 +43,8 @@ import { OnboardingViewsComponent } from './onboarding-views/onboarding-views.co
 import { GeneralViewsComponent } from './general-views/general-views.component';
 import { OnboardReportsComponent } from './onboard-reports/onboard-reports.component';
 import { FmlaViewComponent } from './fmla-view/fmla-view.component';
-import { StaffingTeamComponent } from './staffing-team/staffing-team.component' ;
+import { StaffingTeamComponent } from './staffing-team/staffing-team.component';
+import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component' ;
 
 @NgModule({
   declarations: [
@@ -55,7 +55,6 @@ import { StaffingTeamComponent } from './staffing-team/staffing-team.component' 
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    HomePageComponent,
     CompensationHomeComponent,
     MyCompRequestsComponent,
     DrLeaveRequestComponent,
@@ -85,7 +84,8 @@ import { StaffingTeamComponent } from './staffing-team/staffing-team.component' 
     GeneralViewsComponent,
     OnboardReportsComponent,
     FmlaViewComponent,
-    StaffingTeamComponent
+    StaffingTeamComponent,
+    PrivacyNoticeComponent
     // RoutingComponent
   ],
   imports: [

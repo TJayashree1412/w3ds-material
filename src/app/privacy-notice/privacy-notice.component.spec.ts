@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomePageComponent } from './home-page.component';
+import { PrivacyNoticeComponent } from './privacy-notice.component';
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('PrivacyNoticeComponent', () => {
+  let component: PrivacyNoticeComponent;
+  let fixture: ComponentFixture<PrivacyNoticeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ]
+      declarations: [ PrivacyNoticeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(PrivacyNoticeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

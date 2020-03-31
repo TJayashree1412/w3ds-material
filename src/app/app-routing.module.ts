@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes,  RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import {HomePageComponent} from './home-page/home-page.component';
 import { CompensationHomeComponent } from './compensation-home/compensation-home.component' ;
 import { MyCompRequestsComponent } from './my-comp-requests/my-comp-requests.component' ;
 import { DrLeaveRequestComponent } from './dr-leave-request/dr-leave-request.component';
@@ -33,13 +32,14 @@ import { GeneralViewsComponent } from './general-views/general-views.component';
 import { OnboardReportsComponent } from './onboard-reports/onboard-reports.component';
 import { FmlaViewComponent } from './fmla-view/fmla-view.component' ;
 import { StaffingTeamComponent } from './staffing-team/staffing-team.component' ;
+import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
 
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'Login', component: LoginComponent },
+  { path: 'privacyNotice',component: PrivacyNoticeComponent},
   { path: 'Home', component: HomeComponent,  },
-  { path: 'HomePage', component: HomePageComponent  },
   { path: 'compHome', component: CompensationHomeComponent  },
   { path: 'myCompRequest', component: MyCompRequestsComponent  },
   { path: 'allCompHistory', component: AllCompHistoryComponent  },
