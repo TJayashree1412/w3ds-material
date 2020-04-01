@@ -1,1 +1,166 @@
-<p>onboarding-list works!</p>
+ <div class="ds-row ds-pad-l-1 ds-mar-t-1" >
+    <div class="ds-col-12">
+        <h2 class="ds-text-contextual-blue-5"> Onboard Tracking</h2>
+    </div>
+
+    <div class="ds-row">
+        <div class="ds-col-11 ds-mar-b-1 ">
+        <button data-element="accordion-example-1" class="ds-clickable ds-expand-all-trigger ds-text-small ds-float-right ds-text-contextual-blue-5" id="toggle-example-1" tabindex="0" role="button" style="border: none; background: none;">
+        </button>
+        </div>
+    </div>
+    <div class="ds-accordion-container ds-expand-all ds-mar-t-0 ds-mar-b-2" id="accordion-example-1" aria-label=" Expand All ">
+              <div class="ds-accordion-container ds-mar-t-0 ds-mar-b-0 ds-no-border">
+                  <div class="ds-row ds-accordion-item" aria-controls="ds-accordion-slidedown" aria-expanded="false" role="accordion item" style="background-color: transparent;">
+                      <button class="ds-accordion-title ds-text-contextual-blue-5">Onboarding</button>
+                          <div class="ds-accordion-slidedown" aria-hidden="true" role="region" style="background-color: transparent;">
+                                <div class="ds-table-container" style="overflow:hidden;">
+                                  <table #dataTable class="ds-table ds-table-compact ds-striped ds-hover ds-text-small" style="overflow: scroll;">
+                                    <thead>
+                                        <tr>
+                                            <th >Last Name</th>
+                                            <th >First Name</th>
+                                            <th >Employee Serial</th>
+                                            <th >Employee Host Serial</th>
+                                            <th >Onboard Status</th>
+                                            <th >Primary Email Id</th>
+                                            <th >Host Country Email ID</th>
+                                            <th >O/B Proc complete</th>
+                                            <th >O/B Rep</th>
+                                            <th >Actual Start Date</th>
+                                            <th >Work City</th>
+                                            <th >Work State</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody *ngFor = "let bean of onboardList|slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                                        <tr>
+                                            <td>{{bean.empLastName}}</td>
+                                            <td>{{bean.empFistName}}</td>
+                                            <td>{{bean.empId}}</td>
+                                            <td>{{bean.hostEmpSerial}}</td>
+                                            <td>{{bean.obStatus}}</td>
+                                            <td>{{bean.emailId}}</td>
+                                            <td>{{bean.hostEmpEmail}}</td>
+                                            <td>{{bean.obCmpltdDt}}</td>
+                                            <td>{{bean.obRep}}</td>
+                                            <td>{{bean.actualStDt}}</td>
+                                            <td>{{bean.workCity}}</td>
+                                            <td>{{bean.workState}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <div>
+
+                                </div>
+                            </div>
+                
+                     </div>
+                 </div>
+             </div>
+
+            <div class="ds-accordion-container ds-mar-t-0 ds-mar-b-0 ds-no-border">
+                <div class="ds-row ds-accordion-item" aria-controls="ds-accordion-slidedown" aria-expanded="false" role="accordion item" style="background-color: transparent;">
+                    <button class="ds-accordion-title ds-text-contextual-blue-3">Pending Landed</button>
+                        <div class="ds-accordion-slidedown" aria-hidden="true" role="region" style="background-color: transparent;">
+                            <div class="ds-table-container" style="overflow:hidden;"> 
+                                <table  #dataTable class="ds-table ds-table-compact ds-striped ds-hover">
+                                  
+                                    <thead>
+                                        <tr>
+                                            <th >Last Name</th>
+                                            <th >First Name</th>
+                                            <th >Employee Serial</th>
+                                            <th >Primary Email Id</th>
+                                            <th >O/B Rep</th>
+                                            <th >Visa Type</th>
+                                            <th >Proposed Start Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngFor = "let dto of pendingLandedList">
+                                        <tr>
+                                            <td>{{dto.empLastName}}</td>
+                                            <td>{{dto.empFistName}}</td>
+                                            <td>{{dto.empId}}</td>
+                                            <td>{{dto.emailId}}</td>
+                                            <td>{{dto.obRep}}</td>
+                                            <td>{{dto.visaType}}</td>
+                                            <td>{{dto.propProjStartDt}}</td>
+                                           
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                       </div>
+                </div>
+            </div>
+
+            <div class="ds-accordion-container ds-mar-t-0 ds-mar-b-0 ds-no-border">
+                <div class="ds-row ds-accordion-item" aria-controls="ds-accordion-slidedown" aria-expanded="false" role="accordion item" style="background-color: transparent;">
+                    <button class="ds-accordion-title ds-text-contextual-blue-3">Awaiting emp e-signature</button>
+                        <div class="ds-accordion-slidedown" aria-hidden="true" role="region" style="background-color: transparent;">
+                            <div class="ds-table-container" style="overflow:hidden;">
+                                <table class="ds-table ds-table-compact ds-striped ds-hover">
+                                    <thead>
+                                        <tr>
+                                            <tr>
+                                                <th >Last Name</th>
+                                                <th >First Name</th>
+                                                <th >Employee Serial</th>
+                                                <th >Primary Email Id</th>
+                                                <th >O/B Rep</th>
+                                                <th >Visa Type</th>
+                                                <th >Proposed Start Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody *ngFor = "let dto of esignAwaitingList">
+                                            <tr>
+                                                <td>{{dto.empLastName}}</td>
+                                                <td>{{dto.empFistName}}</td>
+                                                <td>{{dto.empId}}</td>
+                                                <td>{{dto.emailId}}</td>
+                                                <td>{{dto.obRep}}</td>
+                                                <td>{{dto.visaType}}</td>
+                                                <!-- <td>{{todayDate | dto.propProjStartDt :'mediumDate'}}</td> -->
+                                               
+                                            </tr>
+                                        </tbody>
+                                </table>
+                             </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="ds-accordion-container ds-mar-t-0 ds-mar-b-0 ds-no-border">
+                <div class="ds-row ds-accordion-item" aria-controls="ds-accordion-slidedown" aria-expanded="false" role="accordion item" style="background-color: transparent;">
+                    <button class="ds-accordion-title ds-text-contextual-blue-3">Termination Management</button>
+                        <div class="ds-accordion-slidedown" aria-hidden="true" role="region" style="background-color: transparent;">
+                            <div class="ds-table-container" style="overflow:hidden;">
+                                <table class="ds-table ds-table-compact ds-striped ds-hover">
+                                    <thead>
+                                         <tr>
+                                            <th >Last Name</th>
+                                            <th >First Name</th>
+                                            <th >Employee Serial</th>
+                                            <th >Employee Host Serial</th>
+                                            <th >Onboard Status</th>
+                                            <th >Primary Email Id</th>
+                                            <th >Host Country Email ID</th>
+                                            <th >O/B Proc complete</th>
+                                            <th >O/B Rep</th>
+                                            <th >Actual Start Date</th>
+                                            <th >Work City</th>
+                                            <th >Work State</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+            </div>
+    </div>
+
+   
+</div>
