@@ -33,7 +33,7 @@
                                         </tr>
                                     </thead>
                                     
-                                    <tbody *ngFor = "let bean of onboardList|slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                                    <tbody *ngFor = "let bean of onboardList | paginate:{id:'oblist',itemsPerPage: 8, currentPage:p}">
                                         <tr>
                                             <td>{{bean.empLastName}}</td>
                                             <td>{{bean.empFistName}}</td>
@@ -50,9 +50,15 @@
                                         </tr>
 
                                     </tbody>
+                                    
                                 </table>
-                                <div>
 
+                                <pagination-controls id='oblist' autoHide="true" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
+                                 (pageChange)="p=$event" class="ds-float-right"></pagination-controls>
+                                
+ 
+                                <div>
+                                    
                                 </div>
                             </div>
                 
@@ -78,7 +84,7 @@
                                             <th >Proposed Start Date</th>
                                         </tr>
                                     </thead>
-                                    <tbody *ngFor = "let dto of pendingLandedList">
+                                    <tbody *ngFor = "let dto of pendingLandedList | paginate:{id:'pendingList',itemsPerPage: 8, currentPage:r}">
                                         <tr>
                                             <td>{{dto.empLastName}}</td>
                                             <td>{{dto.empFistName}}</td>
@@ -92,6 +98,7 @@
 
                                     </tbody>
                                 </table>
+                                <pagination-controls id="pendingList" autoHide="true" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"(pageChange)="r=$event" class="ds-float-right"></pagination-controls>
                             </div>
                        </div>
                 </div>
@@ -115,7 +122,7 @@
                                                 <th >Proposed Start Date</th>
                                             </tr>
                                         </thead>
-                                        <tbody *ngFor = "let dto of esignAwaitingList">
+                                        <tbody *ngFor = "let dto of esignAwaitingList | paginate:{id:'esignList',itemsPerPage: 8, currentPage:q}">
                                             <tr>
                                                 <td>{{dto.empLastName}}</td>
                                                 <td>{{dto.empFistName}}</td>
@@ -128,6 +135,7 @@
                                             </tr>
                                         </tbody>
                                 </table>
+                                <pagination-controls id="esignList"autoHide="true" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page" (pageChange)="q=$event" class="ds-float-right"></pagination-controls>
                              </div>
                         </div>
                 </div>

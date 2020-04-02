@@ -12,7 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
-import { DataService } from './data.service';
+import { DataService } from './loginService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompensationHomeComponent } from './compensation-home/compensation-home.component';
 import { MyCompRequestsComponent } from './my-comp-requests/my-comp-requests.component';
@@ -43,8 +43,8 @@ import { OnboardingViewsComponent } from './onboarding-views/onboarding-views.co
 import { GeneralViewsComponent } from './general-views/general-views.component';
 import { OnboardReportsComponent } from './onboard-reports/onboard-reports.component';
 import { FmlaViewComponent } from './fmla-view/fmla-view.component';
-import { StaffingTeamComponent } from './staffing-team/staffing-team.component';
-import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component' ;
+import { StaffingTeamComponent } from './staffing-team/staffing-team.component' ;
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -84,8 +84,7 @@ import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.componen
     GeneralViewsComponent,
     OnboardReportsComponent,
     FmlaViewComponent,
-    StaffingTeamComponent,
-    PrivacyNoticeComponent
+    StaffingTeamComponent
     // RoutingComponent
   ],
   imports: [
@@ -93,7 +92,8 @@ import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.componen
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [DataService,AuthGuard],
   bootstrap: [AppComponent]
