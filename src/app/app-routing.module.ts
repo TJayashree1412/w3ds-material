@@ -33,7 +33,7 @@ import { OnboardReportsComponent } from './onboard-reports/onboard-reports.compo
 import { FmlaViewComponent } from './fmla-view/fmla-view.component' ;
 import { StaffingTeamComponent } from './staffing-team/staffing-team.component' ;
 import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
-
+import {ViewIBMIComponent} from './view-ibmi/view-ibmi.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -70,8 +70,7 @@ const routes: Routes = [
   { path: 'fmlaView', component: FmlaViewComponent },
   { path: 'compensationListST', component: StaffingTeamComponent },
   { path: 'help', component: HelpComponent },
-  
-  
+  { path: 'viewIBMI', component: ViewIBMIComponent},  
 ];
 
 @NgModule({

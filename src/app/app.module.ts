@@ -44,7 +44,8 @@ import { GeneralViewsComponent } from './general-views/general-views.component';
 import { OnboardReportsComponent } from './onboard-reports/onboard-reports.component';
 import { FmlaViewComponent } from './fmla-view/fmla-view.component';
 import { StaffingTeamComponent } from './staffing-team/staffing-team.component';
-import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component' ;
+import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
+import { ViewIBMIComponent } from './view-ibmi/view-ibmi.component' ;
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.componen
     OnboardReportsComponent,
     FmlaViewComponent,
     StaffingTeamComponent,
-    PrivacyNoticeComponent
+    PrivacyNoticeComponent,
+    ViewIBMIComponent
     // RoutingComponent
   ],
   imports: [
