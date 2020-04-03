@@ -1,0 +1,9 @@
+table tbody tr td{
+    font-size: x-small;
+}
+table thead tr th{
+    font-size: small;
+    background-color: lightskyblue;
+    font-style: normal;
+}
+

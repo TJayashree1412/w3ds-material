@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataService } from '../loginService';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
      sessionStorage.setItem('loggeduser',this.loginForm.value.userName);
      sessionStorage.setItem('userdata',JSON.stringify(getdata));
      sessionStorage.setItem('isAuthenticated',"true");
-     console.log("Logged in");
     this.router.navigate(['/privacyNotice']);
      console.log("User Data: "+sessionStorage.getItem("userdata"));
   

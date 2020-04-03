@@ -12,7 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
-import { DataService } from './data.service';
+import { DataService } from './loginService';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompensationHomeComponent } from './compensation-home/compensation-home.component';
 import { MyCompRequestsComponent } from './my-comp-requests/my-comp-requests.component';
@@ -46,6 +46,7 @@ import { FmlaViewComponent } from './fmla-view/fmla-view.component';
 import { StaffingTeamComponent } from './staffing-team/staffing-team.component';
 import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
 import { ViewIBMIComponent } from './view-ibmi/view-ibmi.component' ;
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { ViewIBMIComponent } from './view-ibmi/view-ibmi.component' ;
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [DataService,AuthGuard],
   bootstrap: [AppComponent]
