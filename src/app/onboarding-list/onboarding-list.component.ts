@@ -15,9 +15,6 @@ export class OnboardingListComponent implements OnInit {
   q:any;
   r:any;
 
- 
- 
- 
   constructor (public onboardingService: OnboardingService ) {}
 
   ngOnInit() {
@@ -26,6 +23,7 @@ export class OnboardingListComponent implements OnInit {
       this.getEmpSignAwaitingList();
      
     }
+    
 
     async getOnboardedList() {
       this.onboardingService.getOnboardedList()
