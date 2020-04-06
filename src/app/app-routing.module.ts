@@ -62,7 +62,7 @@ const routes: Routes = [
   { path: 'ViewH1BLCAExtension', component: H1BExtensionLCAInputComponent },
   { path: 'relocCompChkListHome', component: RedeploymentCompletionChecklistComponent },
   { path: 'ViewEndClientDtl', component: EndClientNameComponent },
-  { path: 'listCompReqCtdByCS', component: RaiseCompRequestComponent },
+  { path: 'raiseCompRequest', component: RaiseCompRequestComponent },
   { path: 'obApprover', component: ObApproverComponent },
   { path: 'onboaringViews', component: OnboardingViewsComponent },
   { path: 'generalViews', component: GeneralViewsComponent },
