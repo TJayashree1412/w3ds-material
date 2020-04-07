@@ -47,6 +47,9 @@ import { StaffingTeamComponent } from './staffing-team/staffing-team.component';
 import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
 import { ViewIBMIComponent } from './view-ibmi/view-ibmi.component' ;
 import { NgxPaginationModule } from 'ngx-pagination';
+import { EditIBMIComponent } from './edit-ibmi/edit-ibmi.component';
+import { AddIBMIComponent } from './add-ibmi/add-ibmi.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -88,7 +91,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FmlaViewComponent,
     StaffingTeamComponent,
     PrivacyNoticeComponent,
-    ViewIBMIComponent
+    ViewIBMIComponent,
+    EditIBMIComponent,
+    AddIBMIComponent
     // RoutingComponent
   ],
   imports: [
@@ -97,7 +102,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [DataService,AuthGuard],
   bootstrap: [AppComponent]
