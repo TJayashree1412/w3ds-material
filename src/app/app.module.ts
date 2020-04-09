@@ -47,9 +47,8 @@ import { StaffingTeamComponent } from './staffing-team/staffing-team.component';
 import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
 import { ViewIBMIComponent } from './view-ibmi/view-ibmi.component' ;
 import { NgxPaginationModule } from 'ngx-pagination';
-import { EditIBMIComponent } from './edit-ibmi/edit-ibmi.component';
-import { AddIBMIComponent } from './add-ibmi/add-ibmi.component';
-import { FormsModule } from '@angular/forms';
+import { EditIBMIComponent } from './view-ibmi/edit-ibmi/edit-ibmi.component';
+import { AddIBMIComponent } from './view-ibmi/add-ibmi/add-ibmi.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +103,6 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
-    FormsModule
   ],
   providers: [DataService,AuthGuard],
   bootstrap: [AppComponent]

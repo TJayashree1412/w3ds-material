@@ -34,8 +34,8 @@ import { FmlaViewComponent } from './fmla-view/fmla-view.component' ;
 import { StaffingTeamComponent } from './staffing-team/staffing-team.component' ;
 import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
 import {ViewIBMIComponent} from './view-ibmi/view-ibmi.component';
-import {EditIBMIComponent} from './edit-ibmi/edit-ibmi.component';
-import {AddIBMIComponent} from './add-ibmi/add-ibmi.component';
+import {EditIBMIComponent} from './view-ibmi/edit-ibmi/edit-ibmi.component';
+import {AddIBMIComponent} from './view-ibmi/add-ibmi/add-ibmi.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'Login', component: LoginComponent },
@@ -72,7 +72,7 @@ const routes: Routes = [
   { path: 'compensationListST', component: StaffingTeamComponent },
   { path: 'help', component: HelpComponent },
   { path: 'viewIBMI', component: ViewIBMIComponent},
-  {path: 'editIBMI', component: EditIBMIComponent},
+  {path: 'editIBMI/:id', component: EditIBMIComponent},
   {path: 'addIBMI', component: AddIBMIComponent},
 ];
 
