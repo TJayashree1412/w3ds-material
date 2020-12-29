@@ -28,7 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-            "src/assets/w3ds-6.0.8/w3ds.js"
+              "src/assets/w3ds-6.0.8/w3ds.js"
             ]
           },
           "configurations": {
@@ -91,6 +91,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []

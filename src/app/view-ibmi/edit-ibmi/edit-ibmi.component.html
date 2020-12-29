@@ -2,27 +2,27 @@
 <h2 class="page-header" style="margin-top: 0.5%; margin-left: 6.1%; font-style: italic; color: gray; font-weight: bold; font-size: 30px;">Update US HCAM contact</h2>
 
 <div style="margin-left: 2%; margin-top: 5%;">
-<div class="ds-row ds-mar-b-1_5">
+<div class="ds-row " >
   <label for="name">Name: </label>
-  <input type="text" id="name" name="name" [(ngModel)]="resource">
+  <input type="text" id="name" name="name" [(ngModel)]="resource" style="margin-left: 5%;">
 </div>   
-<div class="ds-row ds-mar-b-1_5">
+<div class="ds-row ">
   <label for="email" >E-mail:</label>
-  <input type="text" id="email" name="email" [(ngModel)]="emailId">
+  <input type="text" id="email" name="email" [(ngModel)]="emailId"  style="margin-left: 5.2%;">
 </div>
         
-<div class="ds-row ds-mar-b-1_5">
+<div class="ds-row ">
   <label for="phone">Business phone:</label>
-        <input type="text" id="phone" name="phone" [(ngModel)]="phone">
+        <input type="text" id="phone" name="phone" [(ngModel)]="phone" style="margin-left: -0.1%;" >
 </div>
 
-<div class="ds-row ds-mar-b-1_5">
+<div class="ds-row ">
   <label for="fax">Fax number:</label>
-        <input type="text" id="fax" name="fax" [(ngModel)]="faxNum">
+        <input type="text" id="fax" name="fax" [(ngModel)]="faxNum" style="margin-left: 2.2%;">
 </div>
-<div class="ds-row ds-mar-b-1_5">
+<div class="ds-row ">
   <label for="country">Country/Region:</label>
-    <select id="country"  default="countryName"  style="font-size: 30px; justify-content: center; width: 500px;" >
+    <select id="country"  default="countryName"  style="font-size: 30px; justify-content: center; width: 500px; " >
       <option [ngValue]="null" disables>--choose--</option>
       <option [ngValue]="country" *ngFor="let country of countryMap" [selected]="country.paramName === countryName" >{{country.paramName}}</option>
     </select>

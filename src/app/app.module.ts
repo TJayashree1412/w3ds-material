@@ -49,6 +49,14 @@ import { ViewIBMIComponent } from './view-ibmi/view-ibmi.component' ;
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EditIBMIComponent } from './view-ibmi/edit-ibmi/edit-ibmi.component';
 import { AddIBMIComponent } from './view-ibmi/add-ibmi/add-ibmi.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -103,8 +111,16 @@ import { AddIBMIComponent } from './view-ibmi/add-ibmi/add-ibmi.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
-  providers: [DataService,AuthGuard],
+  providers: [DataService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

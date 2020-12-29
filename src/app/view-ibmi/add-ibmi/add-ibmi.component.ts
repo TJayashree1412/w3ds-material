@@ -10,6 +10,12 @@ import { ParameterBean } from 'src/app/parameter-bean';
 export class AddIBMIComponent implements OnInit {
   headers: string[];
   countryMap: ParameterBean[] = [];
+  resource: string;
+  emailId: string;
+  phone: string;
+  faxNum: string;
+  countryName: string;
+  selectedValue: string;
   constructor(public administratorService: AdministratorServiceService) { }
 
   ngOnInit(): void {
@@ -22,5 +28,7 @@ export class AddIBMIComponent implements OnInit {
         this.countryMap.push(data);
       }
   });
+  }
+  saveContact(){
   }
 }

@@ -1,3 +1,23 @@
-th{
+/* th{
     background-color: lavender;
-}
+} */
+table {
+    width: 100%;
+  }
+  th{
+    font-weight: bolder;
+    font-size: large;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+  }
+  td{
+    font-size: medium;
+    /* font-weight: ; */
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    /* font-style: oblique;   */
+  }
+  #firstelement{
+    display: contents;
+  }

@@ -6,11 +6,8 @@ label{
     align-items: center;
 }
 input{
-    /* margin-left: 10%; */
-    /* border: none; */
-    /* border-bottom: 2px solid black; */
     align-items: flex-start;
     font-size: 30px;
     font-style: oblique;
-    width: auto;
+    width: 500px;
 }
